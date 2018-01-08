@@ -10,5 +10,32 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin()
-	]
+	],
+	module: {
+		rules: [
+			{test: /\.(html)$/, use: {loader: 'html-loader'}},
+			{test: /\.css$/,
+		      use: [
+		        {
+		          loader: "style-loader"
+		        },
+		        {
+		          loader: "css-loader"
+		        }
+		      ]
+		  },
+
+			{ test: /\.ts$/, use: 'ts-loader' },
+			{test: /\.(jpe?g|png|gif|svg)$/i,
+		        loaders: [
+		            'file-loader',
+		            'image-webpack-loader',
+		        ]
+		    },
+		    {
+	        	test: /\.(ico|png|svg|eot|ttf|woff|woff2)?$/,
+                loader: 'url-loader'
+            }
+		]
+	}
 }

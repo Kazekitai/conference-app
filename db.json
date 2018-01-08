@@ -1,4 +1,4 @@
-"speakers" : [
+{"speakers" : [
   {
     "id": "cmottier",
     "topspeaker": true,
@@ -1502,3 +1502,4 @@
     ]
   }
 ]
+}

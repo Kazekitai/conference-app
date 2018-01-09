@@ -6,6 +6,7 @@ require('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 require('../ressources/css/style.css');
 const talkServices = require('./common/talk.service');
 const speakerList = require('./speakers/list/index');
+const sessionList = require('./sessions/list/index');
 const layout = require('./layout/index');
 
 let talkServiceClass = new talkServices.TalkService();
@@ -18,6 +19,25 @@ talkServiceClass.findAllSpeakers().then(function(speakers) {
 });
 
 let layoutPage = new layout.Layout();
-let sectionCoontent = new speakerList.SpeakerList();
+let speakerListContent = new speakerList.SpeakerList();
+let sessionListContent = new sessionList.SessionList();
 layoutPage.render();
-sectionCoontent.render("main-view");
+
+
+// Routeur
+var router = () => {
+	if (location.hash == '#speakers-list') {
+		speakerListContent.render("main-view");
+	} else if (location.hash == '#sessions-list') {
+		sessionListContent.render("main-view");
+	} else {
+		// TODO afficher vue par défaut
+	}
+}
+
+window.addEventListener('load', () => {
+	window.onhashchange = () => {
+		router();
+	};
+	router();
+});

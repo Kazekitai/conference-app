@@ -121,7 +121,23 @@ a {
 	flex-direction: column;
 	align-items: center;
 	font-size: 3rem;
+	height: 100%;
+    width: 100%;
+    padding: 5%;
 }
 .list-container p{
+	width: 20em;
+	overflow: hidden;
 	text-align: left;
+	text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.list-container div a {
+	text-decoration: underline;
+}
+
+.dropdown-menu {
+	font-size: 4rem;
+	/*width: 100%;*/
 }

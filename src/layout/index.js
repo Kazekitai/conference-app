@@ -4,7 +4,6 @@ class Layout {
 	}
 
 	render() {
-		
 		let rendered = Mustache.render(contentTemplate);
 		console.log(rendered);
 		document.body.innerHTML = rendered;

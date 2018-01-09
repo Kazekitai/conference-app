@@ -113,5 +113,15 @@ a {
 }
 
 #main-view {
-	
+	margin-top: 10%;
+}
+
+.list-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 3rem;
+}
+.list-container p{
+	text-align: left;
 }

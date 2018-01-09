@@ -5,6 +5,7 @@ require('../node_modules/bootstrap/dist/js/bootstrap.min.js');
 require('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 require('../ressources/css/style.css');
 const talkServices = require('./common/talk.service');
+const speakerList = require('./speakers/list/index');
 const layout = require('./layout/index');
 
 let talkServiceClass = new talkServices.TalkService();
@@ -17,4 +18,6 @@ talkServiceClass.findAllSpeakers().then(function(speakers) {
 });
 
 let layoutPage = new layout.Layout();
+let sectionCoontent = new speakerList.SpeakerList();
 layoutPage.render();
+sectionCoontent.render("main-view");

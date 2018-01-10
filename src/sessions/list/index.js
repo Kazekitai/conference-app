@@ -12,7 +12,7 @@ class SessionList {
 			content += '<div>';
 			for (let [key, value] of sessions.entries()) {
 				// console.log(speakers[key].firstname);
-				content += '<a href="#"><p>' + sessions[key].title +'</p></a>';
+				content += '<p><a href="#session?'+ sessions[key].id + '">' + sessions[key].title +'</a></p>';
 			}
 			content += '</div>';
 			content += '</div>';

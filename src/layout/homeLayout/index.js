@@ -7,7 +7,6 @@ class Home {
 
 	render(idView) {
 		let rendered = Mustache.render(contentTemplate);
-		console.log(rendered);
 		document.getElementById(idView).innerHTML = rendered;
 	}
 	

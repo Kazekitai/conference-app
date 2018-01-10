@@ -9,6 +9,7 @@ const speakerList = require('./speakers/list/index');
 const sessionList = require('./sessions/list/index');
 const layout = require('./layout/index');
 const home = require('./layout/homeLayout/index');
+const session = require('./sessions/layout/index');
 
 let talkServiceClass = new talkServices.TalkService();
 
@@ -22,16 +23,31 @@ let layoutPage = new layout.Layout();
 let speakerListContent = new speakerList.SpeakerList();
 let sessionListContent = new sessionList.SessionList();
 let homeContent = new home.Home();
+let sessionContent = new session.Session();
 layoutPage.render();
 
 
 // Routeur
 var router = () => {
-	if (location.hash == '#speakers-list') {
+	console.log(location.hash);
+	let hashFullUrl = location.hash.split("?");
+	let hashUrl = hashFullUrl[0];
+	let id = hashFullUrl[1];
+	console.log("hashUrl", hashUrl);
+	console.log("id", id);
+
+	if (hashUrl == '#speakers-list') {
+		document.getElementById("content-title").innerHTML = "Présentateurs";
 		speakerListContent.render("main-view");
-	} else if (location.hash == '#sessions-list') {
+	} else if (hashUrl == '#sessions-list') {
+		document.getElementById("content-title").innerHTML = "Sessions";
 		sessionListContent.render("main-view");
-	} else {
+	} else if(hashUrl == '#session') {
+		document.getElementById("content-title").innerHTML = "Session";
+		sessionContent.render("main-view",id);
+	}
+	else {
+		document.getElementById("content-title").innerHTML = "Conférence";
 		homeContent.render("main-view");
 	}
 }

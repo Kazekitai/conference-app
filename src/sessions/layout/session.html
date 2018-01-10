@@ -1,0 +1,18 @@
+<div class=section-container>
+	<div class="session-title">
+		<h1>{{titre}}</h1>
+	</div>
+	<div class="session-description">
+		<p>{{description}}</p>
+	</div>
+	{{#speakers}}
+	<div class="speakers-list-container">
+		<img src="{{image}}">
+		<p><a href="#">{{firstname}} {{lastname}}</a></p>
+	</div>
+	{{/speakers}}
+	
+	<div class="session-button">
+		<a href="#" id="btn-notes" class="btn btnCustom" disabled><i class="icon-hand-right"></i>Mes Notes</a>
+	</div>
+</div>

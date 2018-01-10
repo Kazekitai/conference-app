@@ -1,6 +1,17 @@
-html,body {
+
+html {
 	width: 100%;
 	height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .header {
@@ -117,10 +128,12 @@ a {
 }
 
 #main-view {
-	margin-top: 5%;
-	display: flex;
+    display: flex;
     align-items: center;
     position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .list-container {
@@ -164,7 +177,7 @@ a {
 	height: 100%;
 }
 
-.home-container {
+.section-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -173,10 +186,14 @@ a {
 
 .home-logo {
 	width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-logo img {
-	width: 100%;
+	width: 50%;
+    max-width: 50%;
 }
 
 .home-title {
@@ -202,4 +219,31 @@ a {
     margin: 3%;
     width: 100%;
     font-size: 3rem;
+}
+
+.session-title {
+	text-align: center;
+    margin: 2%;
+}
+
+.session-description {
+	font-size: 2rem;
+    margin: 5%;
+    text-align: justify;
+}
+
+.speakers-list-container {
+	display: flex;
+    align-items: center;
+    justify-content: normal;
+    font-size: 3rem;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.speakers-list-container img {
+	width: 10%;
+	margin-right: 2%;
+	margin-left: 5%;
+	
 }

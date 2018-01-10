@@ -60,6 +60,10 @@ html,body {
     text-align: center;
 }
 
+.navbar-header {
+	display: inline;
+}
+
 .center-div {
 	margin-left: auto;
     margin-right: auto;
@@ -113,7 +117,10 @@ a {
 }
 
 #main-view {
-	margin-top: 10%;
+	margin-top: 5%;
+	display: flex;
+    align-items: center;
+    position: absolute;
 }
 
 .list-container {
@@ -155,4 +162,44 @@ a {
 
 .dropdown {
 	height: 100%;
+}
+
+.home-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.home-logo {
+	width: 50%;
+}
+
+.home-logo img {
+	width: 100%;
+}
+
+.home-title {
+	margin: 2%;
+}
+
+.home-title h1 {
+	font-size: 6rem;
+}
+
+.home-button {
+	margin: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnCustom {
+	color: #fff;
+    background-color: dimgrey;
+    border-color: black;
+    margin: 3%;
+    width: 100%;
+    font-size: 3rem;
 }

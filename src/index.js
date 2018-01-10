@@ -8,10 +8,10 @@ const talkServices = require('./common/talk.service');
 const speakerList = require('./speakers/list/index');
 const sessionList = require('./sessions/list/index');
 const layout = require('./layout/index');
+const home = require('./layout/homeLayout/index');
 
 let talkServiceClass = new talkServices.TalkService();
 
-alert('Conférence App démarré !!');
 talkServiceClass.findAllSpeakers().then(function(speakers) {
 	for (let [key, value] of speakers.entries()) {
 		console.log(speakers[key].firstname);
@@ -21,6 +21,7 @@ talkServiceClass.findAllSpeakers().then(function(speakers) {
 let layoutPage = new layout.Layout();
 let speakerListContent = new speakerList.SpeakerList();
 let sessionListContent = new sessionList.SessionList();
+let homeContent = new home.Home();
 layoutPage.render();
 
 
@@ -31,7 +32,7 @@ var router = () => {
 	} else if (location.hash == '#sessions-list') {
 		sessionListContent.render("main-view");
 	} else {
-		// TODO afficher vue par défaut
+		homeContent.render("main-view");
 	}
 }
 

@@ -109,7 +109,7 @@ a {
 #menu-btn {
 	background-color: transparent;
 	color: white;
-	font-size: 4rem;
+	font-size: 2.5rem;
 }
 
 #main-view {
@@ -138,6 +138,21 @@ a {
 }
 
 .dropdown-menu {
-	font-size: 4rem;
+	font-size: 1.5rem;
 	/*width: 100%;*/
+}
+
+.logo  a{
+	display: flex;
+    align-items: center;
+}
+
+.navbarMenu {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    height: 5%;
+}
+
+.dropdown {
+	height: 100%;
 }

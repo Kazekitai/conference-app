@@ -1,0 +1,24 @@
+<div class="section-container">
+	<div class="session-title">
+		<h1>{{lastname}} {{firstname}}</h1>
+	</div>
+	{<div class="speaker-image">
+		<img src="{{image}}">
+	</div>
+	<div class="speaker-links">
+		
+	</div>
+	{{#socials}}
+	<div class="speaker-links-container">
+		<p>{{link}}</p>
+	</div>
+	{{/socials}}
+	<div class="speaker-presentations-container">
+		<p>Ses présentations</p>
+		{{#sessions}}
+		<div class="speaker-presentations-list">
+			<p>{{session.title}}</p>
+		</div>
+		{{/sessions}}
+	</div>
+</div>

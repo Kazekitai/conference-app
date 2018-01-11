@@ -106,6 +106,38 @@ class TalkService {
         	},1000);
 		});
 	}
+
+	findSessionsByIdSpeaker(idSpeaker) {
+		// TODO return promise
+		let sessions;
+		let sessionsBySpeakerId = [];
+		const req = new XMLHttpRequest();
+		req.open('GET', 'http://localhost:3000/sessions', true);
+		req.onreadystatechange = (aEvt) => {
+			if (req.readyState == 4) {
+				if(req.status == 200) {
+					sessions = JSON.parse(req.responseText);
+					for(let index in sessions.speakers) {
+						if(sessions.speakers[index] == idSpeaker) {
+							sessionsBySpeakerId.push(sessions.speakers[index]);
+						}
+					}
+				} else {
+					throw "Erreur pendant le chargement de la page";
+				}
+			}
+		};
+		req.send(null);
+		return new Promise(function(resolve, reject) {
+			setTimeout(function() {
+          		if(sessionsBySpeakerId) {
+					resolve(sessionsBySpeakerId);
+				} else {
+					reject('No session found');
+				}
+        	},1000);
+		});
+	}
 }
 
 exports.TalkService = TalkService;

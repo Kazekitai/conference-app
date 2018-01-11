@@ -45,6 +45,9 @@ var router = () => {
 	} else if(hashUrl == '#session') {
 		document.getElementById("content-title").innerHTML = "Session";
 		sessionContent.render("main-view",id);
+	} else if(hashUrl == '#speaker') {
+		document.getElementById("content-title").innerHTML = "Présentateur";
+		sessionContent.render("main-view",id);
 	}
 	else {
 		document.getElementById("content-title").innerHTML = "Conférence";

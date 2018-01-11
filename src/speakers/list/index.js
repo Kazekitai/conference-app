@@ -12,7 +12,7 @@ class SpeakerList {
 			content += '<div>';
 			for (let [key, value] of speakers.entries()) {
 				// console.log(speakers[key].firstname);
-				content += '<a href="#"><p>' + speakers[key].firstname.toUpperCase() + " " + speakers[key].lastname.toUpperCase()  +'</p></a>';
+				content += '<a href="#speaker?'+ speakers[key].id + '"><p>' + speakers[key].firstname.toUpperCase() + " " + speakers[key].lastname.toUpperCase()  +'</p></a>';
 			}
 			content += '</div>';
 			content += '</div>';
